@@ -14,7 +14,7 @@ public class WriteToFileCallback implements AfterAllCallback, AfterTestExecution
 
   @Override
   public void afterAll(ExtensionContext context) throws Exception {
-    Path filePath = Path.of(System.getProperty("user.dir"), "/src/test/resources/TestResults.txt");
+    Path filePath = Path.of(System.getProperty("user.dir"), "/build/CustomTestResults.txt");
     String resultText = String.join("\n", testResults);
     Files.writeString(filePath, resultText);
   }
